@@ -1,11 +1,11 @@
 # 结果展示
 1. 显示效果：
-    ![1595511728742](_v_images/20200723214603673_5557.gif)
+    ![1595511728742](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200723214603673_5557.gif)
 
 # 接线说明
 1. 以树莓派的BCM引脚模式进行接线，好处是java定义树莓派引脚的时候，直接使用BCM引脚号即可。
 2. 可以使用指令 **gpio readall**   查看引脚，最靠左右两边的即是BCM模式的引脚读数
-    ![lcd接线图](_v_images/20200723204326392_13354.jpg)
+    ![lcd接线图](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200723204326392_13354.jpg)
 3. 我买的这个屏幕是1.8寸的128x160的屏幕，共8个引脚，与树莓派的连接见上图，以及下方说明
     GND->接地
     blk(屏幕背景灯，这个引脚单独搞出来，可能是给我们控制亮度用的，比如pwm)+VDD -> ST7735S直接接入3.3v是可以的
@@ -54,7 +54,7 @@
 
 # 结果展示
 1. 第一屏展示当天天气，第二屏展示今天、明天、后天一共三天的天气。
-    ![1596119396121](_v_images/20200730223801495_23268.gif =350x)
+    ![1596119396121](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200730223801495_23268.gif =350x)
 # 参考资料
 1. 感谢sojson这个网站的站长，应该是站长吧，无私地开放免费获取天气预报的接口，接口数据满足个人玩乐使用。该免费接口的说明见[这里](https://www.sojson.com/api/weather.html)
 2. 驱动这个128x160的lcd屏幕，见我之前的一篇内容：《[树莓派 java 驱动 lcd tft spi 1.8寸 ST7735S](https://blog.csdn.net/chenqide163/article/details/107549098)》，我代码重新精简了一下，相信有初级java开发经验的同学都能看懂。代码的github地址见[这里]()---待填入
@@ -75,15 +75,15 @@
     }
     ```
     第一屏今天的天气详情：
-    ![weatherToday](_v_images/20200730231640887_11453.jpg)
+    ![weatherToday](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200730231640887_11453.jpg)
     第二屏，今天、明天、后天的天气概要
-    ![weatherFuture](_v_images/20200730231708096_28178.jpg)
+    ![weatherFuture](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200730231708096_28178.jpg)
 6. 代码文件中包含了各个天气的图标，在src\main\resources\weatherIcon目录中
 7. 生成第一屏的关键代码参考：[getSojsonWeatherImg()方法](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/src/main/java/com/chenqi/tft/st7735s/GetSojsonWeatherImg.java)
 7. 生成第二屏的关键代码参考：[getSojsonFutureWeatherImg()方法](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/src/main/java/com/chenqi/tft/st7735s/GetSojsonWeatherImg.java)
 8. lcd tft spi 1.8寸 ST7735S 的java驱动参考：[]()
 9. ideal中生成jar包，不要install生成，使用package生成，双击package即可。见下图讲解
-    ![出包方式](_v_images/20200730232854240_14757.jpg)
+    ![出包方式](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200730232854240_14757.jpg)
 10. 将出的包：chenqiST7735S128x160-1.0-SNAPSHOT.jar（别取错包了），拖入到树莓派的任意目录。为啥出的是这个包，请参考pom.xml文件，我们使用了插件，指定com.chenqi.tft.st7735s.ST7735SMain为mainClass来出这个jar包，所以这个jar包是一个可运行的jar包，执行效果等同于执行main函数。
-    ![实际出的jar包](_v_images/20200730233050649_19367.jpg)
+    ![实际出的jar包](https://github.com/chenqide163/chenqiST7735S-128x160/blob/master/_v_images/20200730233050649_19367.jpg)
 11. 树莓派上的执行指令为：java -jar chenqiST7735S128x160-1.0-SNAPSHOT.jar
